@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <title>Register</title>
     <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>">
     <style>
         :root {
@@ -24,7 +24,7 @@
             margin:100px;
             border-radius: 1rem;
             box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-            height:480px;
+            height:780px;
             width:550px;
             margin-left:400px;
             padding-top:10px;
@@ -185,8 +185,8 @@
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
        <div class="card card-signin my-5">
           <div class="card-body">
-            <center><h5 class="card-title text-center">LOGIN</h5></center>
-            <h1 class="card-subtitle text-center">Login to Our Application</h1>
+            <center><h5 class="card-title text-center">REGISTER</h5></center>
+            <h1 class="card-subtitle text-center">Create Your New Account</h1>
             <?php
                 $errors = $this->session->flashdata('errors');
                 if(!empty($errors)){
@@ -202,10 +202,25 @@
                 </div>
             <?php } ?>
             <form class="form-signin" action="<?php echo base_url('index.php/auth/proses_login'); ?>" method="post">
-            <h1 class="card-subtitle text-center">Email</h1>
+            <h1 class="card-subtitle text-center">Nama</h1>
             <div class="form-label-group">  
-                <input type="email" name="username" id="text" class="form-control" placeholder="Email address" >
-                <label for="inputUsername">Masukan Email </label>
+                <input type="text" name="username" id="inputUsername" class="form-control" placeholder="Email address" >
+                <label for="inputUsername">Masukan Nama Anda </label>
+              </div>
+              <h1 class="card-subtitle text-center">Alamat</h1>
+                <div class="form-label-group">  
+                <input type="text" name="username" id="inputAlamat" class="form-control" placeholder="Email address" >
+                <label for="inputAlamat">Masukan Alamat Anda </label>
+              </div>
+              <h1 class="card-subtitle text-center">Email</h1>
+            <div class="form-label-group">  
+                <input type="email" name="username" id="inputEmail" class="form-control" placeholder="Email address" >
+                <label for="inputEmail">Masukan Email Anda </label>
+              </div>
+              <h1 class="card-subtitle text-center">Telephone</h1>
+            <div class="form-label-group">  
+                <input type="number" name="username" id="inputTelephone" class="form-control" placeholder="Email address" >
+                <label for="inputTelephone">Masukan Telephone Anda </label>
               </div>
               <h1 class="card-subtitle text-center">Password</h1>
               <div class="form-label-group">
@@ -213,11 +228,11 @@
                 <label for="inputPassword">Masukan Password</label>
               </div>
 
-              <div class="custom-control custom-checkbox mb-3">
+              <!-- <div class="custom-control custom-checkbox mb-3">
                 <input type="checkbox" class="custom-control-input" id="customCheck1">
                 <label class="custom-control-label" for="customCheck1">Remember password</label>
-              </div>
-              <button class="button btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
+              </div> -->
+              <button class="button btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
             </form>
           </div>
         </div> 
