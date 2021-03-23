@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <title>Forgot Password</title>
     <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>">
     <style>
         :root {
@@ -24,7 +24,7 @@
             margin:100px;
             border-radius: 1rem;
             box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-            height:560px;
+            height:450px;
             width:550px;
             margin-left:330px;
             padding-top:10px;
@@ -203,9 +203,11 @@
        <div class="card card-signin my-5">
        <img src="<?php echo base_url(); ?>assets/image/logo.png" width="100"/>
           <div class="card-body">    
-            <center> <h5 class="card-title ">LOGIN</h5>
+            <center> <h5 class="card-title ">Lupa Kata Sandi ?</h5>
             </center>
-            <h1 class="card-subtitle ">Silahkan Masukan Akun Anda </h1>
+            <h1 class="card-subtitle ">Atur ulang kata sandi Anda dengan mengisi nama pengguna atau alamat email Anda. 
+            Anda kemudian akan menerima email dengan tautan yang memungkinkan Anda memasukkan kata sandi baru. 
+            Jika Anda tidak menerima email, silakan hubungi customer service </h1>
             <?php
                 $errors = $this->session->flashdata('errors');
                 if(!empty($errors)){
@@ -226,21 +228,9 @@
                 <input type="email" name="username" id="text" class="form-control" placeholder="Email address" >
                 <label for="inputUsername">Masukan Alamat Email </label>
               </div>
-              <h1 class="card-subtitle ">Kata Sandi *</h1>
-              <div class="form-label-group">
-                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password">
-                <label for="inputPassword">Masukan Kata Sandi</label>
-              </div>
-              <div class="custom-control">
-                <label class="text-forgot" >Lupa Kata Sandi ?</label>
-              </div>
 
-              <div class="custom-control custom-checkbox mb-3">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                <label class="custom-control-label" for="customCheck1">Ingatkan Password </label>
-              </div>
 
-              <button class="button btn btn-lg btn-primary btn-block text-uppercase" type="submit">LOGIN</button>
+              <button class="button btn btn-lg btn-primary btn-block text-uppercase" type="submit">Lupa Kata Sandi</button>
               
 
 

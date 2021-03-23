@@ -24,28 +24,28 @@
             margin:100px;
             border-radius: 1rem;
             box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-            height:780px;
+            height:640px;
             width:550px;
-            margin-left:400px;
+            margin-left:330px;
             padding-top:10px;
             
         }
 
         .card-signin .card-title {
             margin-bottom: 2rem;
-            font-weight: 300;
-            font-size: 1.5rem;
+            /* font-weight: 300; */
+            font-size: 2rem;
             font-family: arial;
             color:#FEBB0F;
-            margin-top: 20px;
-            
+            margin-top: -70px;
+            font-weight: bold;
             
         }
 
         .card-signin .card-subtitle {
-            margin-bottom: 10px
-            font-weight: 300;
-            font-size: 1rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 1.5rem;
             font-family: arial;
             color:#FEBB0F;
             margin-top: 25px;
@@ -65,12 +65,29 @@
             margin-left: 2px;
             margin-top: 20px;
             color:#FFFFFF;
+            transition-duration: 0.4s;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
              
-            
+        }
+        .button:hover {
+            background-color: #616060; 
+            color: white;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
+
+        .text-forgot {
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 1.5rem;
+            font-family: arial;
+            color:#FEBB0F;
+            margin-top: 25px;
+            margin-left: 345px;
         }
 
         .card-signin .card-body {
-            padding: 2rem;
+            padding:40px;
             
             
         }
@@ -88,17 +105,18 @@
             font-weight: bold;
             padding: 1rem;
             transition: all 0.2s;
+            margin-top: 30px;
         }
 
         .form-label-group {
             position: relative;
-            margin-bottom: 1rem;
+            margin-bottom: -10px;
         }
 
         .form-label-group input {
             height: auto;
             border-radius: 6px;
-            width: 435px;
+            width: 470px;
         }
 
         .form-label-group>input,
@@ -184,16 +202,17 @@
     <div class="row">
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
        <div class="card card-signin my-5">
+       <img src="<?php echo base_url(); ?>assets/image/logo.png" width="100"/>
           <div class="card-body">
-            <center><h5 class="card-title text-center">REGISTER</h5></center>
-            <h1 class="card-subtitle text-center">Create Your New Account</h1>
+            <center><h5 class="card-title ">REGISTER</h5></center>
+            <h1 class="card-subtitle ">Buat Akun Baru Anda</h1>
             <?php
                 $errors = $this->session->flashdata('errors');
                 if(!empty($errors)){
                 ?>
                 <div class="row">
                     <div class="col-md-12">
-                    <div class="alert alert-danger text-center">
+                    <div class="alert alert-danger ">
                         <?php foreach($errors as $key=>$error){ ?>
                         <?php echo "$error<br>"; ?>
                         <?php } ?>
@@ -202,37 +221,33 @@
                 </div>
             <?php } ?>
             <form class="form-signin" action="<?php echo base_url('index.php/auth/proses_login'); ?>" method="post">
-            <h1 class="card-subtitle text-center">Nama</h1>
+            <h1 class="card-subtitle ">Nama *</h1>
             <div class="form-label-group">  
                 <input type="text" name="username" id="inputUsername" class="form-control" placeholder="Email address" >
-                <label for="inputUsername">Masukan Nama Anda </label>
+                <label for="inputUsername">Masukan Nama </label>
               </div>
-              <h1 class="card-subtitle text-center">Alamat</h1>
+              <h1 class="card-subtitle ">Alamat *</h1>
                 <div class="form-label-group">  
                 <input type="text" name="username" id="inputAlamat" class="form-control" placeholder="Email address" >
-                <label for="inputAlamat">Masukan Alamat Anda </label>
+                <label for="inputAlamat">Masukan Alamat  </label>
               </div>
-              <h1 class="card-subtitle text-center">Email</h1>
+              <h1 class="card-subtitle ">Alamat Email *</h1>
             <div class="form-label-group">  
                 <input type="email" name="username" id="inputEmail" class="form-control" placeholder="Email address" >
-                <label for="inputEmail">Masukan Email Anda </label>
+                <label for="inputEmail">Masukan Alamat Email  </label>
               </div>
-              <h1 class="card-subtitle text-center">Telephone</h1>
+              <h1 class="card-subtitle ">Telephone *</h1>
             <div class="form-label-group">  
                 <input type="number" name="username" id="inputTelephone" class="form-control" placeholder="Email address" >
-                <label for="inputTelephone">Masukan Telephone Anda </label>
+                <label for="inputTelephone">Masukan Telephone </label>
               </div>
-              <h1 class="card-subtitle text-center">Password</h1>
+              <h1 class="card-subtitle r">Kata Sandi *</h1>
               <div class="form-label-group">
                 <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password">
-                <label for="inputPassword">Masukan Password</label>
+                <label for="inputPassword">Masukan Kata Sandi</label>
               </div>
 
-              <!-- <div class="custom-control custom-checkbox mb-3">
-                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                <label class="custom-control-label" for="customCheck1">Remember password</label>
-              </div> -->
-              <button class="button btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+              <button class="button btn btn-lg btn-primary btn-block text-uppercase" type="submit">REGISTER</button>
             </form>
           </div>
         </div> 

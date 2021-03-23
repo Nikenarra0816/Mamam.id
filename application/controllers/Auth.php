@@ -19,6 +19,11 @@ class Auth extends CI_Controller {
         $this->load->view('auth/register');
     }
 
+    public function forgot()
+    {
+        $this->load->view('auth/forgot');
+    }
+
     public function proses_login()
     {
         $this->load->library('form_validation');
