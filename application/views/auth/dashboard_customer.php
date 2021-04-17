@@ -33,6 +33,7 @@ background: #FEBB0F;
 border-radius: 5px;
 }
 
+
 .mySlides {
   display:none;
   width: 1440px;
@@ -97,7 +98,7 @@ border-radius: 5px;
   border-radius: 5px;
   width: 286px;
   margin-left: 400px;
-  margin-top: -512px;
+  margin-top: -595px;
 }
 .card2 {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -477,7 +478,98 @@ width: 516px;
 height: 54px;
 left: 64px;
 top: 809px;
-margin-top:30px;
+margin-top:40px;
+margin-bottom:25px;
+
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 36px;
+line-height: 54px;
+/* identical to box height */
+
+letter-spacing: 0.1em;
+
+color: #000000;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #FEBB0F;
+  color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  /* padding: 2px 16px; */
+  background-color: #FEBB0F;
+  color: white;
+}
+
+
+.box-cont1{
+width: 516px;
+height: 54px;
+left: 64px;
+top: 809px;
+margin-top:135px;
 margin-bottom:25px;
 
 font-family: Poppins;
@@ -521,8 +613,50 @@ line-height: 30px;
 letter-spacing: 0.1em;
 
 color: #000000;
-  
+}
 
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+.popup{
+  margin-left: 14px;
+  margin-bottom: 20px;
+  background: #FEBB0F;
+  border-radius: 5px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 </style>
@@ -594,7 +728,35 @@ color: #000000;
     <h4><b>Ayam BBQ</b></h4> 
     <p>Rp 15.000</p> 
     <input type="button" value="Pesan" style="background-color:#FEBB0F; width: 250px; height: 41.05px; margin-top:15px;margin-bottom:15px;">
+</div>
+<button class="popup" id="myBtn" style="background: rgba(254, 187, 15, 0.2);border: 1px solid #FEBB0F;color:#FEBB0F;font-weight: bold;
+box-sizing: border-box; width: 250px; height: 41.05px; margin-top:15px;margin-bottom:25px;
+  border-radius: 5px;">See Detail</button>
+    <div id="myModal" class="modal">
+
+<!-- Modal content -->
+<div class="modal-content">
+  <div class="modal-header">
+    <span class="close">&times;</span>
+    <h2>Detail Ayam BBQ</h2>
   </div>
+  <div class="modal-body">
+  <BR>
+    <p>Ayam barbeque, Kentang slice, Sayuran segar, Saos barbeque</p> 
+    
+    <p>- Lauk pendamping dapat berbeda pada setiap pesanan <BR>
+- Minimum pemesanan 5 box untuk bento mealbox atau valuebox <BR>
+- Maksimal pemesanan H-1</p> 
+<h3><b>@Box Rp 15.000,-</b></h3> <BR>
+<br>
+
+  </div>
+  <div class="modal-footer">
+  <p>Untuk pertanyaan dan pemesanan silahkan hubungi Whatsapp Customer Care kami di  081334866525, Senin-Jumat 9:00-17:00 WIB</p>
+  </div>
+</div>
+
+</div>
 </div>
 <div class="card1">
   <img src="<?php echo base_url(); ?>assets/image/ayamkatzu.jpg" alt="Avatar" style="width:100%">
@@ -616,7 +778,7 @@ color: #000000;
 </div>
 
 
-<p class="box-cont" style="margin-left:40px;">Promo</p> 
+<p class="box-cont1" style="margin-left:40px;">Promo</p> 
 </div>
 </div>
 <div class="card">
@@ -624,23 +786,6 @@ color: #000000;
   <div class="container" >
     <h4><b>Ayam BBQ</b></h4> 
     <p>Rp 15.000</p> 
-    <input type="button" value="Pesan" style="background-color:#FEBB0F; width: 250px; height: 41.05px; margin-top:15px;margin-bottom:15px;">
-  </div>
-</div>
-<div class="card1">
-  <img src="<?php echo base_url(); ?>assets/image/ayamkatzu.jpg" alt="Avatar" style="width:100%">
-  <div class="container" >
-    <h4><b>Ayam Katzu</b></h4> 
-    <p>Rp 15.000</p> 
-    <input type="button" value="Pesan" style="background-color:#FEBB0F; width: 250px; height: 41.05px; margin-top:15px;margin-bottom:15px;">
-  </div>
-</div>
-</div>
-<div class="card2">
-  <img src="<?php echo base_url(); ?>assets/image/ayamkatzu.jpg" alt="Avatar" style="width:100%">
-  <div class="container" >
-    <h4><b>Ayam Rujak</b></h4> 
-    <p>Rp 20.000</p> 
     <input type="button" value="Pesan" style="background-color:#FEBB0F; width: 250px; height: 41.05px; margin-top:15px;margin-bottom:15px;">
   </div>
 </div>
@@ -670,6 +815,33 @@ function carousel() {
   if (myIndex > x.length) {myIndex = 1}    
   x[myIndex-1].style.display = "block";  
   setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
 </script>
 

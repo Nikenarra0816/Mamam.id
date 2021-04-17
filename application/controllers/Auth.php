@@ -23,7 +23,10 @@ class Auth extends CI_Controller {
     {
         $this->load->view('auth/dashboard_customer');
     }
-
+    public function shopping_cart()
+    {
+        $this->load->view('auth/shopping_cart');
+    }
     public function register()
     {
         $this->load->view('auth/register');
