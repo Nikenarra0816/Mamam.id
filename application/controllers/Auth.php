@@ -19,6 +19,11 @@ class Auth extends CI_Controller {
         $this->load->view('auth/faq');
     }
 
+    public function dashboard_customer()
+    {
+        $this->load->view('auth/dashboard_customer');
+    }
+
     public function register()
     {
         $this->load->view('auth/register');
