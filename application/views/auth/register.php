@@ -58,11 +58,9 @@
             border: 0;
             background: #FEBB0F;
             border-radius: 5px;
-            margin: 100px;
             border-radius: 1rem;
             box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
             height: 48px;
-            width: 485px;
             margin-left: 2px;
             margin-top: 20px;
             color: #FFFFFF;
@@ -209,22 +207,22 @@
                                 </div>
                             </div>
                         <?php } ?>
-                        <form class="form-signin" action="<?php echo base_url('index.php/auth/proses_login'); ?>" method="post">
+                        <form class="form-signin" action="<?php echo base_url('index.php/auth/proses_register'); ?>" method="post">
                             <h1 class="card-subtitle ">Nama</h1>
                             <div class="form-label-group">
-                                <input type="text" name="username" id="inputUsername" class="form-control" placeholder="Jack Daniel" required>
-                            </div>
-                            <h1 class="card-subtitle ">Alamat</h1>
-                            <div class="form-label-group">
-                                <input type="text" name="username" id="inputAlamat" class="form-control" placeholder="St. Lousvielle" required>
+                                <input type="text" name="name" id="inputUsername" class="form-control" placeholder="Jack Daniel" required>
                             </div>
                             <h1 class="card-subtitle ">Alamat Email</h1>
                             <div class="form-label-group">
                                 <input type="email" name="username" id="inputEmail" class="form-control" placeholder="jacky99@daniel.com" required>
                             </div>
+                            <h1 class="card-subtitle ">Alamat</h1>
+                            <div class="form-label-group">
+                                <input type="text" name="alamat" id="inputAlamat" class="form-control" placeholder="St. Lousvielle" required>
+                            </div>
                             <h1 class="card-subtitle ">Telephone</h1>
                             <div class="form-label-group">
-                                <input type="tel" name="username" id="inputTelephone" class="form-control" placeholder="+1234567890" required>
+                                <input type="tel" name="telepon" id="inputTelephone" class="form-control" placeholder="+1234567890" required>
                             </div>
                             <h1 class="card-subtitle r">Kata Sandi</h1>
                             <div class="form-label-group">

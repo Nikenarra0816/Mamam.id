@@ -25,7 +25,7 @@
             margin: 100px;
             border-radius: 1rem;
             box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-            height: 560px;
+            /* height: 560px; */
             width: 550px;
             margin-left: 330px;
             padding-top: 10px;
@@ -58,7 +58,6 @@
             border: 0;
             background: #FEBB0F;
             border-radius: 5px;
-            margin: 100px;
             border-radius: 1rem;
             box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
             height: 48px;
