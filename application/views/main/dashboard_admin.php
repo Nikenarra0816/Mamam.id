@@ -36,6 +36,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <th scope="col">Nama</th>
                         <th scope="col">Harga</th>
                         <th scope="col">Deskripsi</th>
+                        <th scope="col">Gambar</th>
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
@@ -49,6 +50,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <h3 id="txtEdit">Edit Data <i class="fa fa-times" style="color:red" id="btnClose"></i></h3>
             <div class="">
                 <br>
+                <form method="post" action="" enctype="multipart/form-data" id="myform">
                 <div class="form-group">
                     <label>Nama</label>
                     <input type="text" class="form-control" name="name">
@@ -62,78 +64,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <label>Deskripsi</label>
                     <input type="text" class="form-control" name="description">
                 </div>
+                <div class="form-group">
+                    <input type="file" id="image" name="image"/>
+                </div>
 
                 <div class="form-group" hidden>
-                    <label>Deskripsi</label>
+                    <label>Id</label>
                     <input type="number" class="form-control" name="menuid">
                 </div>
                 <button class="btn btn-success" id="btnTambah">Tambah</button>
                 <button class="btn btn-success" id="btnUpdate">Update</button>
+                </form>
             </div>
         </div>
     </div>
-    </div>
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="modal_sistemkuliah" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Add Data Siswa</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p id="pesan"></p>
-                    <div class="form-group">
-                        <label>Nama</label>
-                        <input type="text" class="form-control" name="nama">
-                    </div>
-                    <div class="form-group">
-                        <label>Kota</label>
-                        <input type="text" class="form-control" name="kota">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="addData()">Save</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Edit-->
-    <div class="modal fade" id="EditForm" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Edit Data Siswa</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p id="pesan"></p>
-                    <div class="form-group">
-                        <label>Nama</label>
-                        <input type="text" class="form-control" name="nama">
-                    </div>
-                    <div class="form-group">
-                        <label>Kota</label>
-                        <input type="text" class="form-control" name="kota">
-                    </div>
-                    <input type="hidden" name="menuid">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="editData()">Update</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
+</div>
 
 </html>
 <script type="text/javascript">
@@ -160,13 +105,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
         var price = $("[name='price']").val();
         var description = $("[name='description']").val();
 
+        var fd = new FormData();
+        var files = $('#image')[0].files;
+        
+        // Check file selected or not
+        if(files.length > 0 ){
+           fd.append('image',files[0]);
+        }
+        fd.append('name',name);
+        fd.append('price',price);
+        fd.append('description',description);
+        
         $.ajax({
             type: 'POST',
-            data: 'name=' + name + '&price=' + price + '&description=' + description,
+            data: fd,
             url: 'dashboard/addMenu',
             dataType: 'json',
+            processData: false,
+            contentType: false,
             success: function(hasil) {
-
                 if (hasil.pesan == '') {
                     alert("Data telah berhasil di simpan.");
                     $("[name='name'],[name='price'],[name='description']").val('');
@@ -225,6 +182,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         '<td>' + data[i].name + '</td>' +
                         '<td>' + data[i].price + '</td>' +
                         '<td>' + data[i].description + '</td>' +
+                        '<td><img src="<?= base_url('uploads/')?>' + data[i].image + '" width="100" alt="no picture"/></td>' +
                         '<td><a href="#EditForm" data-toggle="modal" class="btn btn-success btn-sm" onclick="edit(' + data[i].menuid + ')">Edit</a>' +
                         ' <a href="#HapusForm" data-toggle="modal" class="btn btn-danger btn-sm" onclick="hapusdata(' + data[i].menuid + ')">Delete</a></td>' +
                         '</tr>';

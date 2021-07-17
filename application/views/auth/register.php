@@ -25,7 +25,7 @@
             margin: 100px;
             border-radius: 1rem;
             box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-            height: 640px;
+            height: 800px;
             width: 550px;
             margin-left: 330px;
             padding-top: 10px;
@@ -206,8 +206,84 @@
                                     </div>
                                 </div>
                             </div>
-                        <?php } ?>
-                        <form class="form-signin" action="<?php echo base_url('index.php/auth/proses_register'); ?>" method="post">
+                        <?php 
+                        }
+                       
+                    
+                        echo validation_errors(); 
+                        echo form_open('auth/register',array('class' => 'form-signin'));
+                        ?>  
+
+                         <h1 class="card-subtitle ">Nama</h1>
+                         <div class="form-label-group"> 
+
+                        <?php $datanama = array(
+                            'type'  => 'text',
+                            'name'  => 'name',
+                            'id'    => 'inputUsername',
+                            'value' => '',
+                            'class' => 'form-control'
+                        );
+                       
+                         echo form_input($datanama);    ?>
+                        </div>
+                            <h1 class="card-subtitle ">Alamat Email</h1>
+                            <div class="form-label-group">
+                        
+                        <?php $dataemail = array(
+                            'type'  => 'email',
+                            'name'  => 'username',
+                            'id'    => 'inputEmail',
+                            'value' => '',
+                            'class' => 'form-control'
+                        );
+
+                         echo form_input($dataemail);  ?>  
+                        </div>
+                            <h1 class="card-subtitle ">Alamat</h1>
+                            <div class="form-label-group">
+                         
+                        <?php   $dataalamat = array(
+                            'type'  => 'text',
+                            'name'  => 'alamat',
+                            'id'    => 'inputAlamat',
+                            'value' => '',
+                            'class' => 'form-control'
+                        );
+                         echo form_input($dataalamat);?>  
+                         </div>
+                            <h1 class="card-subtitle ">Telephone</h1>
+                            <div class="form-label-group">
+
+                        <?php $datatelepon = array(
+                            'type'  => 'tel',
+                            'name'  => 'telepon',
+                            'id'    => 'inputTelephone',
+                            'value' => '',
+                            'class' => 'form-control'
+                        ); 
+                         echo form_input($datatelepon);?>    
+                        </div>
+                            <h1 class="card-subtitle r">Kata Sandi</h1>
+                            <div class="form-label-group">
+                        <?php $datapassword = array(
+                            'type'  => 'password',
+                            'name'  => 'password',
+                            'id'    => 'inputPassword',
+                            'value' => '',
+                            'class' => 'form-control'
+                        ); 
+                         echo form_input($datapassword);?>
+                         </div>
+                         <?php   $submit = array(
+                           
+                            'class' => 'button btn btn-lg btn-primary btn-block text-uppercase'
+                        ); 
+                         echo form_submit($submit,'Simpan');    
+                         echo form_close();
+                        
+                        ?>
+                        <!-- <form class="form-signin" action="<?php echo base_url('index.php/auth/proses_register'); ?>" method="post">
                             <h1 class="card-subtitle ">Nama</h1>
                             <div class="form-label-group">
                                 <input type="text" name="name" id="inputUsername" class="form-control" placeholder="Jack Daniel" required>
@@ -230,7 +306,12 @@
                             </div>
 
                             <button class="button btn btn-lg btn-primary btn-block text-uppercase" type="submit">REGISTER</button>
-                        </form>
+                        </form> -->
+                        <br>
+                            <a style="" href="<?= base_url('index.php/Auth/login')?>">
+                            <button class="button btn btn-lg btn-primary btn-block text-uppercase" style="font-weight: bold; font-size:12px">Login</button>  
+                        </a>
+                        <!-- </center> -->
                     </div>
                 </div>
             </div>

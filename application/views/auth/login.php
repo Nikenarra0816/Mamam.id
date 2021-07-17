@@ -210,7 +210,9 @@
                                 <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password">
                             </div>
                             <div class="custom-control">
-                                <label class="text-forgot">Lupa Kata Sandi ?</label>
+                                <a href="<?= base_url('index.php/Auth/register')?>">
+                                    <label class="text-forgot">Register ?</label>
+                                </a>
                             </div>
                             <div class="custom-control custom-checkbox mb-3">
                                 <input type="checkbox" class="custom-control-input" id="customCheck1">

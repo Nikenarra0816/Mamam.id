@@ -9,6 +9,7 @@ class Dashboard extends CI_Controller
         parent::__construct();
         $this->cek_login();
         $this->load->model('m_menu');
+        $this->load->helper(array('form', 'url'));
     }
 
     public function index()
@@ -25,19 +26,46 @@ class Dashboard extends CI_Controller
         $name = $this->input->post('name');
         $price = $this->input->post('price');
         $description = $this->input->post('description');
-
+        $temp = $this->input->post('image');
         if ($name == '') {
             $result['pesan'] = "Nama harus diisi";
         } elseif ($price == 0) {
             $result['pesan'] = "Masa Gratis?";
         } else {
-            $result['pesan'] = "";
 
-            $data = array(
-                'name' => $name,
-                'price' => $price,
-                'description' => $description
-            );
+            // if(!empty($temp->name)){     
+                $config['upload_path']          = './uploads/';
+                $config['allowed_types']        = 'gif|jpg|png';
+                $config['max_size']             = 1000;
+                $config['max_width']            = 2048;
+                $config['max_height']           = 1368;
+
+                $this->load->library('upload', $config);
+
+                if (!$this->upload->do_upload('image'))
+                {
+                    $error = array('error' => $this->upload->display_errors());
+                }else{
+                    $image = $this->upload->data('file_name');
+                }
+
+                $result['pesan'] = "";
+
+
+            if(isset($image)){
+                $data = array(
+                    'name' => $name,
+                    'price' => $price,
+                    'description' => $description,
+                    'image' => $image
+                );
+            }else{
+                $data = array(
+                    'name' => $name,
+                    'price' => $price,
+                    'description' => $description
+                );
+            }
 
             $this->m_menu->save($data, 'siswa');
         }
